@@ -7,7 +7,7 @@ type Documento {
     ultimaModificacion : String!
 }
 
-input BookInput {
+input DocumentoInput {
     idDocumento: ID!
     nombreArchivo: String!
     tipoDocumento: String!
@@ -19,4 +19,10 @@ input BookInput {
 type Query {
     findAllDocumetos: [Documento]!
     findDocumentoById(id: ID!): Documento
+}
+
+type Mutation {
+    createDocumento(bookInput: DocumentoInput!): Documento!
+    updateDocumento(id: ID!, documentoInput: DocumentoInput!): Documento!
+    deleteDocumento(id: ID!): Boolean!
 }
