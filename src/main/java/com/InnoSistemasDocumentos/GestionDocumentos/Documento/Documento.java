@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Documento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDocumento;
@@ -17,6 +18,9 @@ public class Documento {
     private String fechaSubida;
     private String ultimaModificacion;
 
+    public Documento() {
+
+    }
 
     public Documento(Long idDocumento, String nombreArchivo, String tipoDocumento, String urlUbicacion, String fechaSubida, String ultimaModificacion) {
         this.idDocumento = idDocumento;
@@ -75,5 +79,16 @@ public class Documento {
         this.ultimaModificacion = ultimaModificacion;
     }
 
+    @Override
+    public String toString() {
+        return "Documento{" +
+                "idDocumento=" + idDocumento +
+                ", nombreArchivo='" + nombreArchivo + '\'' +
+                ", tipoDocumento='" + tipoDocumento + '\'' +
+                ", urlUbicacion='" + urlUbicacion + '\'' +
+                ", fechaSubida='" + fechaSubida + '\'' +
+                ", ultimaModificacion='" + ultimaModificacion + '\'' +
+                '}';
+    }
 
 }
