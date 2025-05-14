@@ -1,0 +1,22 @@
+type Documento {
+    idDocumento: ID!
+    nombreArchivo: String!
+    tipoDocumento: String!
+    urlUbicacion: String!
+    fechaSubida: String!
+    ultimaModificacion : String!
+}
+
+input BookInput {
+    idDocumento: ID!
+    nombreArchivo: String!
+    tipoDocumento: String!
+    urlUbicacion: String!
+    fechaSubida: String!
+    ultimaModificacion : String!
+}
+
+type Query {
+    findAllDocumetos: [Documento]!
+    findDocumentoById(id: ID!): Documento
+}
